@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $alertMsg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_callback'])) {
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_callback'])) {
         $alertMsg = "Пожалуйста, заполните все поля.";
     }
 }
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -226,11 +226,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_callback'])) {
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="./site.js"></script>
 
-<?php if (!empty($alertMsg)): ?>
+<!-- <?php if (!empty($alertMsg)): ?>
 <script>
     alert("<?php echo $alertMsg; ?>");
 </script>
-<?php endif; ?>
+<?php endif; ?> -->
 
 </body>
+
 </html>
