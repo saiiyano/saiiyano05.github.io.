@@ -1,0 +1,236 @@
+<?php
+$alertMsg = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_callback'])) {
+    $name = htmlspecialchars(trim($_POST['name']));
+    $phone = htmlspecialchars(trim($_POST['phone']));
+
+    if (!empty($name) && !empty($phone)) {
+        $alertMsg = "Спасибо! Ваша заявка отправлена.";
+        // mail($to, $subject, $message, $headers); // если нужно
+    } else {
+        $alertMsg = "Пожалуйста, заполните все поля.";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#EDB126">
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+    }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>PichPrint</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <span class="logo1">пич<span class="logo2"> принт</span></span>
+
+            <nav class="nav">
+                <ul>
+                    <a href="#" class="nav__link">Главная</a>
+                    <a href="#services" class="nav__link">Услуги</a>
+                    <a href="#" class="nav__link">Онлайн-заказ</a>
+                    <a href="#" class="nav__link">Контакты</a>
+                    <a href="#" class="nav__link">Корзина</a>
+                    <a href="#" class="nav__link">Войти</a>
+                </ul>
+            </nav>
+
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<div class="intro">
+    <div class="container">
+        <div class="intro__inner">
+            <div class="intro__inner__content">
+                <h1 class="intro__title">Типография и копицентр Пич Принт</h1>
+                <h2 class="intro__subtitle">Быстро, качественно и удобно: печать, копия, сувениры и фото на документы, а также широкий выбор рекламной продукции</h2>
+                <button class="btn">Онлайн-заказ</button>
+            </div>
+            <img src="img/fax.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+    <section class="section1">
+        <img src="img/Белый фон.png" alt="" class="bg-image">
+        <div class="container">
+            <div class="section1__content">
+                <img src="img/printer-1.png" alt="" class="printer">
+                <div class="section1__content__text">
+                    <h2>Мы предоставляем услуги по печати и ксерокопии, а  также по изготовлению сувенирной продукции</h2>
+                    <h3><a href="#" class="link1">Подробнее</a></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section2">
+    <div class="container">
+        <h1>Услуги</h1>
+        <div class="slider-marathon-wrapper">
+            <div class="slider-marathon">
+                <div class="slider-track">
+                <div class="slide"><img src="img/1.png" alt="Услуга 1"></div>
+                <div class="slide"><img src="img/2.png" alt="Услуга 2"></div>
+                <div class="slide"><img src="img/3.png" alt="Услуга 3"></div>
+                <div class="slide"><img src="img/4.png" alt="Услуга 4"></div>
+                <div class="slide"><img src="img/5.png" alt="Услуга 5"></div>
+                <div class="slide"><img src="img/6.png" alt="Услуга 6"></div>
+                <!-- дубликаты для бесконечности -->
+                <div class="slide"><img src="img/1.png" alt="Услуга 1"></div>
+                <div class="slide"><img src="img/2.png" alt="Услуга 2"></div>
+                <div class="slide"><img src="img/3.png" alt="Услуга 3"></div>
+                <div class="slide"><img src="img/4.png" alt="Услуга 4"></div>
+                <div class="slide"><img src="img/5.png" alt="Услуга 5"></div>
+                <div class="slide"><img src="img/6.png" alt="Услуга 6"></div>
+            </div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+
+    </div>
+  </section>
+
+  <section class="section3">
+    <div class="container">
+        <img src="img/block5.png" alt="" class="bg-image2">
+        <div class="section3__content">
+            <h1>Этапы онлайн-заказа</h1>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <img src="img/block5_1.png" alt="">
+                    <p>Заявка</p>
+                </div>
+
+                <div class="step-item">
+                    <img src="img/block5_2.png" alt="">
+                    <p>Расчёт стоимости</p>
+                </div>
+
+                <div class="step-item">
+                    <img src="img/block5_3.png" alt="">
+                    <p>Оплата</p>
+                </div>
+
+                <div class="step-item">
+                    <img src="img/block5_4.png" alt="">
+                    <p>Согласование</p>
+                </div>
+
+                <div class="step-item">
+                    <img src="img/block5_5.png" alt="">
+                    <p>Печать</p>
+                </div>
+
+                <div class="step-item">
+                    <img src="img/block5_6.png" alt="">
+                    <p>Контроль качества</p>
+                </div>
+
+                <div class="step-item">
+                    <img src="img/block5_7.png" alt="">
+                    <p>Доставка или самовывоз</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+    <section class="section4">
+        <div class="container">
+            <div class="section4__content">
+                <h1>Закажите звонок</h1>
+                <p>Оставьте свой номер, и мы свяжемся с вами в ближайшее время</p>
+                <form class="callback-form" id="callback-form" method="POST">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="tel" name="phone" placeholder="Ваш телефон" required>
+                    <button type="submit" name="submit_callback" class="btn">Заказать звонок</button>
+                </form>
+                <div id="form-message" style="color: green; margin-top: 10px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Информация</h3>
+                <ul>
+                    <li><a href="#">Арендодателям</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Публичная оферта</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>О компании</h3>
+                <ul>
+                    <li><a href="#">Написать директору</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Новости</a></li>
+                    <li><a href="#">Блог</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Полезное</h3>
+                <ul>
+                    <li><a href="#">Портфолио</a></li>
+                    <li><a href="#">Статус заказа</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul>
+                    <li><a href="tel:+79969023045"><strong>+7 (996) 902–30–45</strong></a></li>
+                    <li><a href="mailto:pichprint@gmail.com"><strong>pichprint@gmail.com</strong></a></li>
+                </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="footer-bottom">
+                <span class="footer-logo">PICHPRINT.RU</span>
+                <span class="footer-copy">Все права защищены. © 2011–2025 PICHPRINT.RU</span>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./site.js"></script>
+
+<?php if (!empty($alertMsg)): ?>
+<script>
+    alert("<?php echo $alertMsg; ?>");
+</script>
+<?php endif; ?>
+
+</body>
+</html>
